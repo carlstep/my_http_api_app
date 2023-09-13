@@ -40,13 +40,14 @@ class _HomePageState extends State<HomePage> {
                   return Padding(
                     padding: const EdgeInsets.fromLTRB(8, 2, 8, 2),
                     child: Card(
+                      color: Colors.grey[200],
                       child: ListTile(
                         onTap: () => openPage(context, country),
-                        leading: const CircleAvatar(
-                            child: Icon(
-                          Icons.abc,
-                          size: 40,
-                        )),
+                        leading: CircleAvatar(
+                          radius: 30,
+                          backgroundImage:
+                              NetworkImage('${country.flags!.png}'),
+                        ),
                         title: Text('${country.name!.common}'),
                         subtitle: const Text('currency name...'),
                         trailing: const Icon(
